@@ -189,7 +189,7 @@ export const musicLibrary = [
     artists: ['Sid Sriram', 'Gopi Sundar'],
     album: 'Geetha Govindam',
     tags: ['South', 'Love'],
-    coverImage: 'https://i.scdn.co/image/ab67616d0000b2732f047c3f92ed7759f7b73bfa',
+    coverImage: 'https://c.saavncdn.com/237/Geetha-Govindam-Telugu-2018-20180921-500x500.jpg',
     audioSrc: `${AUDIO_BASE}Vachindamma.mp3`,
     releaseDate: null,
     duration: 250,
