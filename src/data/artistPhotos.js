@@ -34,6 +34,9 @@ export const artistPhotos = {
   'Ron Likhari': 'https://i.scdn.co/image/ab6761610000e5ebdba9a9996191acbf62ef097a',
   'Shevv': 'https://i.scdn.co/image/ab6761610000e5eb16eb413ba4546408ac88bf89',
   'Sidhu Moose Wala': 'https://i.scdn.co/image/ab6761610000e5eb9973157bdaedef3f77ef8e13',
+  'Shreya Ghoshal': 'https://i.scdn.co/image/ab6761610000e5ebe7ce89a9f5d11e0ba26677eb',
+  'Romy': 'https://i.scdn.co/image/ab6761610000e5eb1feefe5e8bf8154969b5cdac',
+  'Madhur Sharma': 'https://i.scdn.co/image/ab6761610000e5ebfc2face96cf2a3ae93c64e82',
   // 'Artist': 'Link',
 };
 
