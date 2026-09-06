@@ -1,0 +1,25 @@
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+  background: var(--color-surface-alt);
+  color: var(--color-text);
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+.tag:active {
+  transform: scale(0.96);
+}
+
+.tag-primary { background: color-mix(in srgb, var(--color-primary) 18%, var(--color-surface-alt)); color: var(--color-primary-light); }
+.tag-teal { background: color-mix(in srgb, var(--color-teal) 18%, var(--color-surface-alt)); color: var(--color-teal); }
+.tag-rose { background: color-mix(in srgb, var(--color-rose) 18%, var(--color-surface-alt)); color: var(--color-rose); }
+.tag-amber { background: color-mix(in srgb, var(--color-amber) 20%, var(--color-surface-alt)); color: var(--color-amber); }
+.tag-violet { background: color-mix(in srgb, var(--color-violet) 18%, var(--color-surface-alt)); color: var(--color-violet); }
+
+.tag-active {
+  border-color: currentColor;
+}

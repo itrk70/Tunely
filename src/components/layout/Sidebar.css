@@ -1,0 +1,122 @@
+.sidebar {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    width: var(--sidebar-width);
+    flex-shrink: 0;
+    background: var(--color-surface);
+    border-right: 1px solid var(--color-border);
+    padding: var(--space-5) var(--space-4);
+    /* Bug fix: this was `height: 100vh` with `position: sticky`, which
+       made the sidebar taller than the space actually left after the
+       player bar's height — so the player bar visually covered its
+       bottom edge. The sidebar is now a plain flex child of .app-body
+       (see global.css), which already accounts for the player bar's
+       height, so `height: 100%` here can never overlap anything. */
+    height: 100%;
+    overflow-y: auto;
+  }
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+  padding: 0 var(--space-2);
+}
+
+.sidebar-logo-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.sidebar-theme-btn {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: var(--radius-pill);
+  background: var(--color-surface-alt);
+  color: var(--color-text);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+.sidebar-theme-btn:hover {
+  background: var(--color-surface-raised);
+  transform: scale(1.06);
+}
+
+.sidebar-logo-mark {
+  font-size: 1.4rem;
+  color: var(--color-primary);
+}
+
+.sidebar-logo-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+}
+
+.sidebar-logo-tag {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+}
+
+.sidebar-nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-3);
+  border-radius: var(--radius-md);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.sidebar-link:hover {
+  background: var(--color-surface-alt);
+  color: var(--color-text);
+}
+
+.sidebar-link-active {
+  background: var(--color-primary-soft);
+  color: var(--color-primary-light);
+}
+
+.sidebar-sublinks {
+  display: flex;
+  flex-direction: column;
+  margin: var(--space-1) 0 var(--space-2) var(--space-6);
+  border-left: 1px solid var(--color-border);
+  padding-left: var(--space-3);
+}
+
+.sidebar-sublink {
+  padding: var(--space-2) var(--space-2);
+  font-size: 0.85rem;
+  color: var(--color-text-faint);
+}
+.sidebar-sublink:hover {
+  color: var(--color-text);
+}
+.sidebar-sublink-active {
+  color: var(--color-primary-light);
+}
+
+

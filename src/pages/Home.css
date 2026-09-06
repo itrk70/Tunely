@@ -1,0 +1,147 @@
+/*
+  Redesign (user request #7): the old banner was a flat gradient box.
+  This version adds a theme-aware layered gradient, a soft animated
+  glow, and a small animated equalizer visual — all built from design
+  tokens so both dark and light mode look intentional rather than the
+  dark-mode gradient just looking muddy in light mode.
+*/
+.hero-banner {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(120deg, var(--color-surface) 0%, var(--color-surface-alt) 60%, var(--color-surface) 100%);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6) var(--space-5);
+  margin-bottom: var(--space-6);
+}
+
+.hero-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 85% 15%, var(--color-primary-soft), transparent 55%),
+    radial-gradient(circle at 15% 90%, color-mix(in srgb, var(--color-teal) 14%, transparent), transparent 55%);
+  animation: hero-glow-shift 10s ease-in-out infinite alternate;
+}
+
+@keyframes hero-glow-shift {
+  from {
+    opacity: 0.8;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.hero-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+}
+
+.hero-text {
+  max-width: 420px;
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-primary-light);
+  background: var(--color-primary-soft);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+  margin-bottom: var(--space-3);
+}
+
+.hero-text h2 {
+  font-size: 1.6rem;
+  margin-bottom: var(--space-2);
+  color: var(--color-text);
+}
+
+.hero-text p {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-4);
+  font-size: 0.92rem;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.hero-stat {
+  font-size: 0.8rem;
+  color: var(--color-text-faint);
+}
+
+/* Small animated equalizer bars — a lightweight "music" motif instead
+   of a stock photo, and it respects prefers-reduced-motion globally
+   (see global.css). */
+.hero-visual {
+  display: none;
+}
+
+.eq-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 80px;
+}
+
+.eq-bars span {
+  width: 10px;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(to top, var(--color-primary), var(--color-primary-light));
+  animation: eq-bounce 1.2s ease-in-out infinite;
+}
+.eq-bars span:nth-child(1) { height: 30%; animation-delay: 0s; }
+.eq-bars span:nth-child(2) { height: 65%; animation-delay: 0.15s; }
+.eq-bars span:nth-child(3) { height: 100%; animation-delay: 0.3s; }
+.eq-bars span:nth-child(4) { height: 55%; animation-delay: 0.45s; }
+.eq-bars span:nth-child(5) { height: 40%; animation-delay: 0.6s; }
+
+@keyframes eq-bounce {
+  0%, 100% { transform: scaleY(0.4); }
+  50% { transform: scaleY(1); }
+}
+
+@media (min-width: 640px) {
+  .hero-visual {
+    display: flex;
+    align-items: flex-end;
+    flex-shrink: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-banner {
+    padding: var(--space-7);
+  }
+  .hero-text h2 {
+    font-size: 2.2rem;
+  }
+  .eq-bars {
+    height: 110px;
+  }
+}
+
+/*
+  Light-mode pass (user request #7): the primary-soft tint and card
+  borders read fine automatically since they're token-driven, but the
+  banner's base gradient needs its own lighter values here — reusing
+  the dark ones directly would look washed out on a white surface.
+*/
+[data-theme='light'] .hero-banner {
+  background: linear-gradient(120deg, #ffffff 0%, #eef9f1 55%, #ffffff 100%);
+}
+[data-theme='light'] .hero-glow {
+  background: radial-gradient(circle at 85% 15%, rgba(34, 197, 94, 0.16), transparent 55%),
+    radial-gradient(circle at 15% 90%, rgba(34, 211, 238, 0.12), transparent 55%);
+}

@@ -1,0 +1,111 @@
+.playlist-song-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.playlist-song-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-2);
+  border-radius: var(--radius-md);
+}
+.playlist-song-row:hover {
+  background: var(--color-surface-alt);
+}
+.playlist-song-row-active .playlist-song-name {
+  color: var(--color-primary-light);
+}
+
+.playlist-song-index {
+  width: 24px;
+  text-align: center;
+  color: var(--color-text-faint);
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.playlist-song-main {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
+
+.playlist-song-main img {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.playlist-song-main > span {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.playlist-song-name {
+  font-size: 0.88rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.playlist-song-artist {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.playlist-song-duration {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+  width: 40px;
+  text-align: right;
+}
+
+.playlist-song-reorder {
+  display: none;
+  flex-shrink: 0;
+  gap: var(--space-1);
+}
+.playlist-song-reorder button {
+  width: 24px;
+  height: 24px;
+  color: var(--color-text-muted);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+}
+.playlist-song-reorder button:hover:not(:disabled) {
+  color: var(--color-text);
+  background: var(--color-surface-raised);
+}
+.playlist-song-reorder button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.playlist-song-remove {
+  flex-shrink: 0;
+  color: var(--color-text-faint);
+  padding: var(--space-2);
+  border-radius: var(--radius-pill);
+}
+.playlist-song-remove:hover {
+  color: var(--color-danger);
+}
+
+@media (min-width: 768px) {
+  .playlist-song-reorder {
+    display: flex;
+  }
+}

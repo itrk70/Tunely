@@ -1,0 +1,157 @@
+/*
+  Decision: this file is the ONE source of truth for song metadata (§9, §19).
+  Artists and albums are never stored as separate objects — they are derived
+  from this array at read time (see src/models/songQueries.js). Playlists
+  (in PlaylistContext) only ever store an array of these songs' `id`s.
+
+  Audio path fix: paths are built from `import.meta.env.BASE_URL` instead of
+  a hand-typed "/Tunely/..." prefix. BASE_URL always matches whatever `base`
+  is set to in vite.config.js, so:
+    - `npm run dev` locally serves correctly from "/"
+    - the deployed GitHub Pages site serves correctly from "/Tunely/"
+    - renaming the repo later only means updating vite.config.js in ONE
+      place, not every audioSrc in this file
+  Put your actual audio files in `public/audio/` (flat, no nested "Tunely"
+  folder needed) — see AUDIO_BASE below and the updated README.
+*/
+
+const AUDIO_BASE = `${import.meta.env.BASE_URL}audio/`;
+
+export const musicLibrary = [
+  {
+    id: 'song-001',
+    name: 'California Love',
+    artists: ['Cheema Y', 'Gur Sidhu'],
+    album: null,
+    tags: ['Punjabi', 'Trending'],
+    coverImage: 'https://c.saavncdn.com/647/ANYWAY-Punjabi-2023-20260507164257-500x500.jpg',
+    audioSrc: `${AUDIO_BASE}California_Love.mp3`,
+    releaseDate: '2023-01-30',
+    duration: 189,
+  },
+  {
+    id: 'song-002',
+    name: 'Zigane',
+    artists: ['Dhanda Nyoliwala', 'Shevv'],
+    album: null,
+    tags: ['Haryanvi', 'Hip Hop', 'Desi', 'Gangster', 'Rap'],
+    coverImage: 'https://c.saavncdn.com/120/Zigane-Hindi-2026-20260630053050-500x500.jpg',
+    audioSrc: `${AUDIO_BASE}Zigane.mp3`,
+    releaseDate: '2026-07-02',
+    duration: 192,
+  },
+  {
+    id: 'song-003',
+    name: 'Maruti',
+    artists: ['Dhanda Nyoliwala', 'Miki Malang', 'Ron Likhari'],
+    album: null,
+    tags: ['Haryanvi', 'Hip Hop', 'Desi', 'Gangster', 'Rap'],
+    coverImage: 'https://c.saavncdn.com/817/Maruti-Hindi-2025-20250831053557-500x500.jpg',
+    audioSrc: `${AUDIO_BASE}Maruti.mp3`,
+    releaseDate: '2025-09-02',
+    duration: 213,
+  },
+  {
+    id: 'song-004',
+    name: 'Do Numbari',
+    artists: ['Dhanda Nyoliwala'],
+    album: 'Mirzapur The Movie',
+    tags: ['Haryanvi', 'Hip Hop', 'MirzapurTheMovie', 'Gangster', 'Rap'],
+    coverImage: 'https://c.saavncdn.com/064/Do-Numbari-From-Mirzapur-The-Movie-Hindi-2026-20260803172106-500x500.jpg',
+    audioSrc: `${AUDIO_BASE}Do_Numbari.mp3`,
+    releaseDate: '2026-08-03',
+    duration: 163,
+  },
+  {
+    id: 'song-005',
+    name: 'Tension',
+    artists: ['Dhanda Nyoliwala'],
+    album: 'Kohram',
+    tags: ['Haryanvi', 'Hip Hop', 'Kohram', 'Gangster', 'Rap'],
+    coverImage: 'https://c.saavncdn.com/434/Tension-Slowed-Hindi-2025-20250923170039-500x500.jpg',
+    audioSrc: `${AUDIO_BASE}Tension.mp3`,
+    releaseDate: '2026-04-16',
+    duration: 143,
+  },
+  {
+    id: 'song-006',
+    name: 'Wavy',
+    artists: ['Karan Aujla'],
+    album: null,
+    tags: ['Punjabi', 'Jay Trak', 'Desi', 'Hip Hop'],
+    coverImage: 'https://c.saavncdn.com/178/Wavy-Punjabi-2024-20250523044332-500x500.jpg',
+    audioSrc: `${AUDIO_BASE}Wavy.mp3`,
+    releaseDate: '2024-11-15',
+    duration: 161,
+  },
+  {
+    id: 'song-007',
+    name: 'Daru Badnaam',
+    artists: ['Kamal Kahlon', 'Param Singh'],
+    album: null,
+    tags: ['Punjabi', 'Billion Views'],
+    coverImage: 'https://i.scdn.co/image/ab67616d00001e026847da03e75963f00ee89eaf',
+    audioSrc: `${AUDIO_BASE}Daru_Badnaam.mp3`,
+    releaseDate: '2024-11-15',
+    duration: 185,
+  },
+  {
+    id: 'song-008',
+    name: 'Azul',
+    artists: ['Guru Randhawa', 'Gurjit Gill'],
+    album: null,
+    tags: ['Punjabi', 'Punjabi Pop', 'Old School Vibe'],
+    coverImage: 'https://i.scdn.co/image/ab67616d0000b2736aed8f756fd0f767bc998fb2',
+    audioSrc: `${AUDIO_BASE}AZUL.mp3`,
+    releaseDate: '2025-08-06',
+    duration: 138,
+  },
+  {
+    id: 'song-009',
+    name: 'Russian Bandana',
+    artists: ['Dhanda Nyoliwala'],
+    album: null,
+    tags: ['Haryanvi', 'Hip Hop', 'Gangster', 'Rap'],
+    coverImage: 'https://i.scdn.co/image/ab67616d0000b2734f715aacf93c1ccbbf0373d3',
+    audioSrc: `${AUDIO_BASE}Russian_Bandana.mp3`,
+    releaseDate: '2024-09-12',
+    duration: 197,
+  },
+  {
+    id: 'song-010',
+    name: 'Up to U',
+    artists: ['Dhanda Nyoliwala'],
+    album: null,
+    tags: ['Haryanvi', 'Hip Hop', 'Club Rap', 'Gangster', 'Rap'],
+    coverImage: 'https://c.saavncdn.com/640/Up-To-U-Haryanvi-2023-20230509232625-500x500.jpg',
+    audioSrc: `${AUDIO_BASE}Up_to_U.mp3`,
+    releaseDate: '2023-05-06',
+    duration: 188,
+  },
+  {
+    id: 'song-011',
+    name: '295',
+    artists: ['Sidhu Moose Wala'],
+    album: 'Moosetape',
+    tags: ['Punjabi', 'Rap', 'Moosewala', 'Gangster'],
+    coverImage: 'https://i.pinimg.com/736x/8c/be/f7/8cbef7af042f82b961cdce9c06ba8ab0.jpg',
+    audioSrc: `${AUDIO_BASE}295.mp3`,
+    releaseDate: '2021-07-14',
+    duration: 270,
+  },
+  {
+    // Bug fix: this was also `song-011`, duplicating the id above. IDs are
+    // how every lookup (playlists, getSongById, list rendering) resolves a
+    // song, so the duplicate made this song effectively unreachable —
+    // anything looking up "song-011" would always resolve to "295" instead.
+    id: 'song-012',
+    name: 'These Days',
+    artists: ['Sidhu Moose Wala'],
+    album: 'Moosetape',
+    tags: ['Punjabi', 'Rap', 'Moosewala', 'Gangster'],
+    coverImage: 'https://c.saavncdn.com/609/Moosetape-Punjabi-2021-20220427043323-500x500.jpg',
+    audioSrc: `${AUDIO_BASE}These_Days.mp3`,
+    releaseDate: '2021-05-17',
+    duration: 209,
+  },
+];

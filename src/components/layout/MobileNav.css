@@ -1,0 +1,36 @@
+/* Bug fix: was `position: fixed` — now a normal flex item at the bottom
+   of .app-shell (see App.jsx), so it can't be hidden by mobile browser
+   chrome and never overlaps the sidebar (see Sidebar.css). */
+.mobile-nav {
+  flex-shrink: 0;
+  height: var(--nav-height-mobile);
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  z-index: 50;
+}
+
+@media (min-width: 1024px) {
+  .mobile-nav {
+    display: none;
+  }
+}
+
+.mobile-nav-link {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  font-size: 0.65rem;
+  color: var(--color-text-faint);
+}
+
+.mobile-nav-link span:first-child {
+  font-size: 1.15rem;
+}
+
+.mobile-nav-link-active {
+  color: var(--color-primary);
+}
