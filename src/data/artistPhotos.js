@@ -37,6 +37,8 @@ export const artistPhotos = {
   'Shreya Ghoshal': 'https://i.scdn.co/image/ab6761610000e5ebe7ce89a9f5d11e0ba26677eb',
   'Romy': 'https://i.scdn.co/image/ab6761610000e5eb1feefe5e8bf8154969b5cdac',
   'Madhur Sharma': 'https://i.scdn.co/image/ab6761610000e5ebfc2face96cf2a3ae93c64e82',
+  // 'Sid Sriram': 'Link',
+  // 'Gopi Sundar': 'Link',
   // 'Artist': 'Link',
 };
 
