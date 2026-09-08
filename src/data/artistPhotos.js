@@ -37,8 +37,9 @@ export const artistPhotos = {
   'Shreya Ghoshal': 'https://i.scdn.co/image/ab6761610000e5ebe7ce89a9f5d11e0ba26677eb',
   'Romy': 'https://i.scdn.co/image/ab6761610000e5eb1feefe5e8bf8154969b5cdac',
   'Madhur Sharma': 'https://i.scdn.co/image/ab6761610000e5ebfc2face96cf2a3ae93c64e82',
-  // 'Sid Sriram': 'Link',
-  // 'Gopi Sundar': 'Link',
+  'Sid Sriram': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtwv_dY8vefmypQ7XMFF76oKDz4ADGciGwUscPuoqEquVmcI2SHjm_bbQ&s=10',
+  'Gopi Sundar': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXGikW_rLW_jhA9FSdirpI5tduWajmOCxUy9gvrnDIjg&s=10',
+  'Vishal Dadlani': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg_qLZ6QLmdFI8pK7oxJdW7P9a2Ox2ph7nrRLXGXUbYg&s=10',
   // 'Artist': 'Link',
 };
 
