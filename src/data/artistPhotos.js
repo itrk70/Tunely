@@ -40,6 +40,9 @@ export const artistPhotos = {
   'Sid Sriram': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtwv_dY8vefmypQ7XMFF76oKDz4ADGciGwUscPuoqEquVmcI2SHjm_bbQ&s=10',
   'Gopi Sundar': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXGikW_rLW_jhA9FSdirpI5tduWajmOCxUy9gvrnDIjg&s=10',
   'Vishal Dadlani': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg_qLZ6QLmdFI8pK7oxJdW7P9a2Ox2ph7nrRLXGXUbYg&s=10',
+  'A.R. Rahman': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-TjWMKTlI_rYMtuxPUfoGszc6OklWXoosgapEcC2ztQ&s',
+  'Akull': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk6nltThmv4RA9Mfw9xb3YRna7VQNJbG3kKCaR1v2zNQ&s=10',
+  'Sanjay Leela Bhansali': 'https://i.scdn.co/image/ab676161000051742c6a38bb5947a12ab0b1070c',
   // 'Artist': 'Link',
 };
 

@@ -249,4 +249,15 @@ export const musicLibrary = [
     releaseDate: null,
     duration: 244,
   },
+  // {
+  //   id: 'song-022',
+  //   name: 'Deewani Mastani',
+  //   artists: ['Shreya Ghoshal', 'Ganesh Chandanshive', 'Mujtaba Aziz Naza', 'Shadab Faridi', 'Altamash Faridi', 'Farhan Sabri'],
+  //   album: 'Bajirao Mastani',
+  //   tags: ['Hindi', 'Love', 'Ranveer Singh'],
+  //   coverImage: 'https://i.scdn.co/image/ab67616d0000b2736b01530825529db0bee75515',
+  //   audioSrc: `${AUDIO_BASE}Deewani_Mastani.mp3`,
+  //   releaseDate: null,
+  //   duration: 350,
+  // },
 ];
