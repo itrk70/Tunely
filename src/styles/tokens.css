@@ -11,6 +11,16 @@
   --color-primary: #22c55e;
   --color-primary-hover: #16a34a;
   --color-primary-light: #4ade80;
+
+  /* Additional color try */
+  /* -----------------------------
+  --color-primary: #c52222;
+  --color-primary-hover: #a31616;
+  --color-primary-light: #de4a4a; */
+  
+  /* -----------------------------
+  try end */
+
   --color-primary-soft: rgba(34, 197, 94, 0.16);
 
   /* ---- Secondary accents (kept from the reference palette for tag variety) ---- */
