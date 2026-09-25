@@ -43,6 +43,8 @@ export const artistPhotos = {
   'A.R. Rahman': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-TjWMKTlI_rYMtuxPUfoGszc6OklWXoosgapEcC2ztQ&s',
   'Akull': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk6nltThmv4RA9Mfw9xb3YRna7VQNJbG3kKCaR1v2zNQ&s=10',
   'Sanjay Leela Bhansali': 'https://i.scdn.co/image/ab676161000051742c6a38bb5947a12ab0b1070c',
+  'Khan Saab': 'https://i.scdn.co/image/ab67616d00001e02975991417b5ac2a7afb37f90',
+  'Kailash Kher': 'https://i.scdn.co/image/ab6761610000e5ebc6d179e514b5cfe685f19a2e',
   // 'Artist': 'Link',
 };
 
