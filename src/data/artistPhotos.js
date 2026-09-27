@@ -45,6 +45,10 @@ export const artistPhotos = {
   'Sanjay Leela Bhansali': 'https://i.scdn.co/image/ab676161000051742c6a38bb5947a12ab0b1070c',
   'Khan Saab': 'https://i.scdn.co/image/ab67616d00001e02975991417b5ac2a7afb37f90',
   'Kailash Kher': 'https://i.scdn.co/image/ab6761610000e5ebc6d179e514b5cfe685f19a2e',
+  'AUR': 'https://i.scdn.co/image/ab6761610000e5ebb86e212f46d4ef5d86fc8ca0',
+  'Sanjoy': 'https://i.scdn.co/image/ab6761610000e5ebd2d10c1a5b5d6424b7178909',
+  'Babbu Maan': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ7kGnnbaWYEpqSLMqga8jlEcwbQCJXOkNDRa-JiKa61TY8gRFSdnTpUk&s=10',
+  'Ikka': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReVyt99vMIp-l9uRRlhFmdaIrnTLIiupz4-qGmMFmdog&s=10',
   // 'Artist': 'Link',
 };
 
