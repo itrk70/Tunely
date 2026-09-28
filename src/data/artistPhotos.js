@@ -1,26 +1,3 @@
-/*
-  Decision: this is a separate, tiny lookup table — NOT a field on songs,
-  and NOT something the UI lets a user edit. Reasons:
-
-  1. A song's `coverImage` is the single/album art, which isn't the same
-     thing as a canonical photo of the artist — and one artist can appear
-     on several songs with different covers, so there's no one place on
-     a song object where an "artist photo" would unambiguously belong.
-  2. Keeping it in its own file means updating your music library (e.g.
-     replacing src/data/musicLibrary.js with a new set of songs) never
-     touches this — artist photos you've set stay put.
-  3. It's entirely optional: any artist name NOT listed here just keeps
-     the existing initials-avatar fallback already used everywhere
-     (ArtistCard, ArtistDetail). Nothing breaks by leaving this empty.
-
-  To add a photo for an artist, add a line here with the EXACT artist
-  name as it appears in musicLibrary.js's `artists` arrays:
-
-    export const artistPhotos = {
-      'Karan Aujla': 'https://example.com/karan-aujla.jpg',
-    };
-*/
-
 export const artistPhotos = {
   'Guru Randhawa': 'https://mxp-media.ilnmedia.com/media/content/2020/Mar/Guru-Randhawas-Walkman-Watch-Sings-The-Time1200_5e70c95d38478.jpeg',
   'Cheema Y': 'https://i.scdn.co/image/ab676161000051748acd9439506d057719cb4446',
