@@ -1,0 +1,167 @@
+.queue-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  pointer-events: none;
+  z-index: 90;
+  transition: background var(--transition-base);
+}
+.queue-drawer-overlay-open {
+  background: rgba(0, 0, 0, 0.5);
+  pointer-events: auto;
+}
+
+.queue-drawer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(360px, 100%);
+  background: var(--color-surface);
+  border-left: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform var(--transition-base);
+  box-shadow: var(--shadow-md);
+}
+.queue-drawer-open {
+  transform: translateX(0);
+}
+
+.queue-drawer-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+.queue-drawer-head h3 {
+  font-size: 1rem;
+}
+
+.queue-drawer-close {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+}
+.queue-drawer-close:hover {
+  color: var(--color-text);
+  background: var(--color-surface-alt);
+}
+
+.queue-drawer-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-4) var(--space-3);
+}
+
+.queue-section-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+  padding: 0 var(--space-2);
+  margin-bottom: var(--space-2);
+}
+.queue-section-label-spaced {
+  margin-top: var(--space-5);
+}
+
+.queue-empty-hint {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  padding: var(--space-2);
+}
+
+.queue-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.queue-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2);
+  border-radius: var(--radius-md);
+}
+.queue-row:hover {
+  background: var(--color-surface-alt);
+}
+
+.queue-row-current {
+  background: var(--color-primary-soft);
+}
+.queue-row-current .queue-row-name {
+  color: var(--color-primary-light);
+}
+
+.queue-row img {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.queue-row > span {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+
+.queue-row-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.queue-row-artist {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.queue-drag-handle {
+  color: var(--color-text-faint);
+  flex-shrink: 0;
+  cursor: grab;
+  display: flex;
+}
+
+.queue-row-reorder {
+  display: none;
+  flex-shrink: 0;
+  gap: var(--space-1);
+}
+.queue-row-reorder button {
+  width: 24px;
+  height: 24px;
+  color: var(--color-text-muted);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+}
+.queue-row-reorder button:hover:not(:disabled) {
+  color: var(--color-text);
+  background: var(--color-surface-raised);
+}
+.queue-row-reorder button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+@media (min-width: 640px) {
+  .queue-row-reorder {
+    display: flex;
+  }
+}

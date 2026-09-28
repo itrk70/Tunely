@@ -18,7 +18,7 @@ export default function App() {
     <ThemeProvider>
       <PlaylistProvider>
         <PlayerProvider>
-          <BrowserRouter>
+          <BrowserRouter basename={import.meta.env.BASE_URL}>
             {/*
               Layout decision: the outer shell is a fixed-height flex COLUMN
               (not `position: fixed` bars floating over content). The

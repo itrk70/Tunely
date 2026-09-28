@@ -10,7 +10,9 @@ import {
   RepeatIcon,
   VolumeIcon,
   MuteIcon,
+  QueueIcon,
 } from './PlayerIcons';
+import { QueueDrawer } from './QueueDrawer';
 import './PlayerBar.css';
 
 export function PlayerBar() {
@@ -22,6 +24,7 @@ export function PlayerBar() {
     volume,
     shuffle,
     repeat,
+    upNext,
     togglePlayPause,
     next,
     previous,
@@ -36,6 +39,7 @@ export function PlayerBar() {
   // speaker icon again restores it instead of just jumping to 100%.
   const lastVolumeRef = useRef(volume || 0.8);
   const [showVolumeSlider, setShowVolumeSlider] = useState(false);
+  const [showQueue, setShowQueue] = useState(false);
 
   if (!currentSong) return null;
 
@@ -52,6 +56,30 @@ export function PlayerBar() {
 
   return (
     <div className="player-bar">
+      {/*
+        Bug fix: the seek bar used to live nested inside .player-controls,
+        which CSS only revealed at desktop widths (min-width: 1024px) —
+        so mobile had NO progress/seek control at all, matching the
+        reported screenshot. It's now its own full-width row, always
+        rendered, sitting above the main controls row on every screen
+        size (desktop keeps roughly the same centered look via CSS
+        max-width, not by hiding/moving the markup).
+      */}
+      <div className="player-progress-row">
+        <span className="player-time">{formatTime(currentTime)}</span>
+        <input
+          type="range"
+          className="player-seek"
+          min={0}
+          max={duration || 0}
+          value={currentTime}
+          onChange={(e) => seek(Number(e.target.value))}
+          aria-label="Seek"
+          style={{ '--progress': `${progressPct}%` }}
+        />
+        <span className="player-time">{formatTime(duration)}</span>
+      </div>
+
       <div className="player-bar-inner">
         <div className="player-track-info">
           <img src={currentSong.coverImage} alt="" className="player-cover" />
@@ -96,22 +124,17 @@ export function PlayerBar() {
               <RepeatIcon />
             </button>
           </div>
-
-          <div className="player-progress-row">
-            <span className="player-time">{formatTime(currentTime)}</span>
-            <input
-              type="range"
-              className="player-seek"
-              min={0}
-              max={duration || 0}
-              value={currentTime}
-              onChange={(e) => seek(Number(e.target.value))}
-              aria-label="Seek"
-              style={{ '--progress': `${progressPct}%` }}
-            />
-            <span className="player-time">{formatTime(duration)}</span>
-          </div>
         </div>
+
+        <button
+          className="player-icon-btn player-queue-btn"
+          onClick={() => setShowQueue(true)}
+          aria-label="Open queue"
+          aria-pressed={showQueue}
+          data-tooltip={`Queue${upNext.length > 0 ? ` (${upNext.length})` : ''}`}
+        >
+          <QueueIcon />
+        </button>
 
         <div
           className="player-volume"
@@ -143,6 +166,8 @@ export function PlayerBar() {
           {error}
         </p>
       )}
+
+      <QueueDrawer open={showQueue} onClose={() => setShowQueue(false)} />
     </div>
   );
 }

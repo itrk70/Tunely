@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { usePlayer } from '../context/PlayerContext';
-import { getAllSongs, getAllArtists, getAllAlbums } from '../models/songQueries';
+import { getAllSongs, getAllArtists, getAllAlbums, getSongsByIds } from '../models/songQueries';
 import { SongCard } from '../components/cards/SongCard';
 import { ArtistCard } from '../components/cards/ArtistCard';
 import { AlbumCard } from '../components/cards/AlbumCard';
@@ -10,12 +10,23 @@ import { Button } from '../components/common/Button';
 import './Home.css';
 
 export function Home() {
-  const { playSong } = usePlayer();
+  const { playSong, recentlyPlayedIds } = usePlayer();
   const [addTarget, setAddTarget] = useState(null);
 
   const allSongs = getAllSongs();
-  // Home shows curated slices, never the whole library (§16).
-  const recentlyPlayed = useMemo(() => allSongs.slice(0, 5), [allSongs]);
+  /*
+    Bug fix: this used to always show the library's first 5 songs,
+    regardless of what anyone had actually played. It now resolves the
+    real listen history tracked in PlayerContext (most-recent-first,
+    recorded every time a track actually starts playing — see
+    PlayerContext's startPlayback). Falls back to a curated slice only
+    for a brand-new visitor who hasn't played anything yet, so the
+    section is never just empty.
+  */
+  const recentlyPlayed = useMemo(() => {
+    const history = getSongsByIds(recentlyPlayedIds);
+    return history.length > 0 ? history.slice(0, 5) : allSongs.slice(0, 5);
+  }, [recentlyPlayedIds, allSongs]);
   const featuredSongs = useMemo(() => [...allSongs].reverse().slice(0, 5), [allSongs]);
   const featuredArtists = useMemo(() => getAllArtists().slice(0, 5), []);
   const featuredAlbums = useMemo(() => getAllAlbums().slice(0, 5), []);

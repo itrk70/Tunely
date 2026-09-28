@@ -5,6 +5,7 @@ import { PlaylistCard } from '../components/cards/PlaylistCard';
 import { EmptyState } from '../components/common/EmptyState';
 import { Modal } from '../components/common/Modal';
 import { Button } from '../components/common/Button';
+import { EditCoverModal } from '../components/common/EditCoverModal';
 import { TopBar } from '../components/layout/TopBar';
 import { useNavigate } from 'react-router-dom';
 
@@ -12,6 +13,11 @@ export function Playlists() {
   const { playlists, createPlaylist } = usePlaylists();
   const [showCreate, setShowCreate] = useState(false);
   const [name, setName] = useState('');
+  // Bug fix: "Edit cover" used to be reachable only from inside a
+  // playlist's own detail page. This tracks which playlist (if any) is
+  // being edited right from the overview grid — PlaylistCard's hover
+  // button below calls setEditingPlaylist directly.
+  const [editingPlaylist, setEditingPlaylist] = useState(null);
   const navigate = useNavigate();
 
   const handleCreate = (e) => {
@@ -44,7 +50,12 @@ export function Playlists() {
       ) : (
         <div className="card-grid">
           {playlists.map((p) => (
-            <PlaylistCard key={p.id} playlist={p} songs={getSongsByIds(p.songIds)} />
+            <PlaylistCard
+              key={p.id}
+              playlist={p}
+              songs={getSongsByIds(p.songIds)}
+              onEditCover={setEditingPlaylist}
+            />
           ))}
         </div>
       )}
@@ -70,6 +81,15 @@ export function Playlists() {
             </div>
           </form>
         </Modal>
+      )}
+
+      {editingPlaylist && (
+        <EditCoverModal
+          playlistId={editingPlaylist.id}
+          songs={getSongsByIds(editingPlaylist.songIds)}
+          currentCoverSongIds={editingPlaylist.coverSongIds}
+          onClose={() => setEditingPlaylist(null)}
+        />
       )}
     </div>
   );

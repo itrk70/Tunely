@@ -1,14 +1,27 @@
 import { usePlayer } from '../../context/PlayerContext';
+import { QueueAddIcon } from '../player/PlayerIcons';
 import './Card.css';
 
 export function SongCard({ song, queue, onAddToPlaylist }) {
-  const { playSong, currentSong, isPlaying } = usePlayer();
+  const { playSong, currentSong, isPlaying, addToQueue } = usePlayer();
   const isActive = currentSong?.id === song.id;
 
   return (
     <div className={`card song-card ${isActive ? 'card-active' : ''}`}>
       <div className="card-art">
         <img src={song.coverImage} alt="" loading="lazy" />
+        {/* Feature: "Add to Queue" — direct one-step action (unlike
+            "add to playlist", it needs no picker), so it calls the
+            player context straight away. Placed on the LEFT, mirroring
+            "add to playlist" on the right, per request. */}
+        <button
+          className="card-queue-btn"
+          onClick={() => addToQueue(song)}
+          aria-label={`Add ${song.name} to queue`}
+          data-tooltip="Add to queue"
+        >
+          <QueueAddIcon width={14} height={14} />
+        </button>
         <button
           className="card-play-btn"
           onClick={() => playSong(song, queue || [song])}

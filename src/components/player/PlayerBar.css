@@ -1,11 +1,3 @@
-/*
-  Bug fix: this used to be `position: fixed`, which some mobile browsers
-  intermittently slide off-screen along with their own toolbar during
-  scroll. It's now a normal flex item stacked in the app shell's layout
-  (see App.jsx / global.css .app-shell), so it can never be hidden —
-  it's just always the next thing after the scrollable content, above
-  the mobile nav.
-*/
 .player-bar {
   flex-shrink: 0;
   background: var(--color-surface);
@@ -13,11 +5,27 @@
   z-index: 40;
 }
 
+/*
+  Bug fix: this row used to be nested inside .player-controls, which
+  only became `display: flex` at desktop widths (min-width: 1024px) —
+  on mobile it was `display: none` outright, so there was no way to
+  see progress or scrub the track on small screens at all. It's now
+  always visible, full width, and sits above the rest of the bar on
+  every screen size. Desktop keeps roughly its old centered look via
+  max-width below, not by hiding/relocating this markup.
+*/
+.player-progress-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3) 0;
+}
+
 .player-bar-inner {
   display: flex;
   align-items: center;
   gap: var(--space-3);
-  padding: var(--space-2) var(--space-3);
+  padding: var(--space-1) var(--space-3) var(--space-2);
   height: var(--player-height-mobile);
 }
 
@@ -57,6 +65,12 @@
   text-overflow: ellipsis;
 }
 
+.player-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .player-buttons {
   display: flex;
   align-items: center;
@@ -84,6 +98,10 @@
   color: var(--color-primary);
 }
 
+.player-queue-btn {
+  flex-shrink: 0;
+}
+
 .player-play-btn {
   width: 36px;
   height: 36px;
@@ -101,10 +119,6 @@
 }
 .player-play-btn:active {
   transform: scale(0.94);
-}
-
-.player-progress-row {
-  display: none;
 }
 
 .player-volume {
@@ -135,19 +149,26 @@
 }
 .player-seek::-webkit-slider-thumb {
   -webkit-appearance: none;
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
   background: var(--color-primary);
   border: 2px solid var(--color-bg);
 }
-
+.player-seek::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  border: 2px solid var(--color-bg);
+}
 
 .player-time {
   font-size: 0.7rem;
   color: var(--color-text-muted);
   width: 34px;
   text-align: center;
+  flex-shrink: 0;
 }
 
 .player-error {
@@ -158,9 +179,14 @@
 }
 
 @media (min-width: 1024px) {
+  .player-progress-row {
+    max-width: 560px;
+    margin: 0 auto;
+    padding: var(--space-2) var(--space-6) 0;
+  }
   .player-bar-inner {
     height: var(--player-height-desktop);
-    padding: var(--space-3) var(--space-6);
+    padding: var(--space-1) var(--space-6) var(--space-3);
   }
   .player-cover {
     width: 56px;
@@ -168,17 +194,6 @@
   }
   .player-controls {
     flex: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-1);
-    max-width: 520px;
-  }
-  .player-progress-row {
-    display: flex;
-    align-items: center;
-    gap: var(--space-3);
-    width: 100%;
   }
   .player-volume {
     display: flex;

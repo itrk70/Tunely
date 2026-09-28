@@ -47,11 +47,16 @@ src/
 
 See the in-code comments — most files open with a short "Decision / Reason" note explaining why that piece is built the way it is.
 
-## Deploying to GitHub Pages
+## Deploying (one codebase, `main` branch, two hosts)
 
-1. `npm run build` — outputs static files to `dist/`.
-2. Push `dist/` to a `gh-pages` branch (or use the `gh-pages` npm package), or point GitHub Pages at the `dist` folder via GitHub Actions.
-3. `vite.config.js` sets `base: '/Tunely/'` — this must exactly match your repo name. **If you rename the GitHub repo, update this one line** (and nothing else needs to change, since all runtime paths read from it via `import.meta.env.BASE_URL`).
+The site's base path comes from the `VITE_BASE_PATH` environment variable (default `/`).
+
+- **Vercel** — import the repo, keep the defaults (`vercel.json` already sets Vite, `dist`, and the SPA rewrite). Nothing to configure.
+- **GitHub Pages** — `.github/workflows/deploy.yml` builds on every push to `main` with `VITE_BASE_PATH=/<repo-name>/` and publishes `dist/`. In the repo: **Settings → Pages → Source → GitHub Actions** (one-time). Renaming the repo needs no code change.
+
+Your `public/audio/` songs must be committed to `main` — both hosts build from the repo.
+
+To test the GitHub Pages build locally: `VITE_BASE_PATH=/Tunely/ npm run build && npm run preview`.
 
 ## What's intentionally not included (V1)
 

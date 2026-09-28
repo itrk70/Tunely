@@ -1,6 +1,17 @@
 .card {
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+
+/* Used only by PlaylistCard, which needs two separate links (art + text)
+   plus a standalone edit button — nesting a <button> inside an <a> is
+   invalid HTML, so PlaylistCard can't just wrap everything in one Link
+   the way SongCard/ArtistCard/AlbumCard do. */
+.card-link-wrap,
+.card-text-link {
+  display: block;
+  color: inherit;
 }
 
 .card-art {
@@ -66,6 +77,61 @@
 .card:hover .card-add-btn,
 .card:focus-within .card-add-btn {
   opacity: 1;
+}
+
+/* "Add to queue" — mirrors .card-add-btn but sits on the LEFT (user
+   request: queue on the left, playlist-add stays on the right). Used
+   on SongCard only. */
+.card-queue-btn {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-2);
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-pill);
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+.card:hover .card-queue-btn,
+.card:focus-within .card-queue-btn {
+  opacity: 1;
+}
+.card-queue-btn:hover {
+  transform: scale(1.1);
+}
+
+/* "Edit cover" — shown directly on the Playlists overview grid (not
+   just after opening a playlist), positioned like .card-add-btn since
+   PlaylistCard has no play button to share that corner with. */
+.card-edit-cover-btn {
+  position: absolute;
+  top: var(--space-2);
+  right: var(--space-2);
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-pill);
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+  z-index: 2;
+}
+.card:hover .card-edit-cover-btn,
+.card:focus-within .card-edit-cover-btn {
+  opacity: 1;
+}
+.card-edit-cover-btn:hover {
+  transform: scale(1.1);
 }
 
 .card-title {

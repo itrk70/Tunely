@@ -94,3 +94,44 @@ export function MuteIcon(props) {
     </svg>
   );
 }
+
+/* Queue toggle button in the player bar (a simple stacked-lines "list" glyph). */
+export function QueueIcon(props) {
+  return (
+    <svg {...common} {...props}>
+      <line x1="3" y1="6" x2="15" y2="6" />
+      <line x1="3" y1="12" x2="15" y2="12" />
+      <line x1="3" y1="18" x2="11" y2="18" />
+      <path d="M18 15l3 3-3 3" />
+      <line x1="21" y1="18" x2="15" y2="18" />
+    </svg>
+  );
+}
+
+/* "Add to queue" hover button on a song card — same list glyph, plus a
+   small "+" so it reads distinctly from the queue-drawer toggle above. */
+export function QueueAddIcon(props) {
+  return (
+    <svg {...common} {...props}>
+      <line x1="3" y1="6" x2="14" y2="6" />
+      <line x1="3" y1="12" x2="14" y2="12" />
+      <line x1="3" y1="18" x2="10" y2="18" />
+      <line x1="19" y1="14" x2="19" y2="20" />
+      <line x1="16" y1="17" x2="22" y2="17" />
+    </svg>
+  );
+}
+
+/* Drag handle shown next to each reorderable queue row. */
+export function DragHandleIcon(props) {
+  return (
+    <svg {...common} {...props}>
+      <circle cx="9" cy="6" r="1.4" fill="currentColor" stroke="none" />
+      <circle cx="15" cy="6" r="1.4" fill="currentColor" stroke="none" />
+      <circle cx="9" cy="12" r="1.4" fill="currentColor" stroke="none" />
+      <circle cx="15" cy="12" r="1.4" fill="currentColor" stroke="none" />
+      <circle cx="9" cy="18" r="1.4" fill="currentColor" stroke="none" />
+      <circle cx="15" cy="18" r="1.4" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
