@@ -1,20 +1,3 @@
-/*
-  Decision: this file is the ONE source of truth for song metadata (§9, §19).
-  Artists and albums are never stored as separate objects — they are derived
-  from this array at read time (see src/models/songQueries.js). Playlists
-  (in PlaylistContext) only ever store an array of these songs' `id`s.
-
-  Audio path fix: paths are built from `import.meta.env.BASE_URL` instead of
-  a hand-typed "/Tunely/..." prefix. BASE_URL always matches whatever `base`
-  is set to in vite.config.js, so:
-    - `npm run dev` locally serves correctly from "/"
-    - the deployed GitHub Pages site serves correctly from "/Tunely/"
-    - renaming the repo later only means updating vite.config.js in ONE
-      place, not every audioSrc in this file
-  Put your actual audio files in `public/audio/` (flat, no nested "Tunely"
-  folder needed) — see AUDIO_BASE below and the updated README.
-*/
-
 const AUDIO_BASE = `${import.meta.env.BASE_URL}audio/`;
 
 export const musicLibrary = [
@@ -307,7 +290,7 @@ export const musicLibrary = [
   {
     id: 'song-027',
     name: 'Bandook Meri Laila',
-    artists: ['sh King', 'Jigar Saraiya', 'Sidharth Malhotra'],
+    artists: ['Ash King', 'Jigar Saraiya', 'Sidharth Malhotra'],
     album: 'A Gentleman',
     tags: ['Hindi', 'Love', 'Romantic', 'Bollywood', 'Movie Song'],
     coverImage: 'https://pagalnew.com/coverimages/Bandook-Meri-Laila-A-Gentleman-500-500.jpg',
@@ -469,5 +452,15 @@ export const musicLibrary = [
     releaseDate: '2022-08-22',
     duration: 187,
   },
-
+  // {
+  //   id: 'song-038`',
+  //   name: 'Fake Love',
+  //   artists: ['Guru Randhawa', 'Sanjoy', 'Amar Sandhu'],
+  //   album: 'Man Of The Moon',
+  //   tags: ['Punjabi', 'Heartbreak', 'Sad', 'Urban', 'Upbeat', 'Desi Hip Hop'],
+  //   coverImage: '',
+  //   audioSrc: `${AUDIO_BASE}Fake_Love.mp3`,
+  //   releaseDate: '2022-08-23',
+  //   duration: 152,
+  // },
 ];
