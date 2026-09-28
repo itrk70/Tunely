@@ -452,6 +452,17 @@ export const musicLibrary = [
     releaseDate: '2022-08-22',
     duration: 187,
   },
+  {
+    id: 'song-041`',
+    name: 'Black Raat',
+    artists: ['Guru Randhawa'],
+    album: 'Man Of The Moon',
+    tags: ['Punjabi', 'Heartbreak', 'Sad', 'Chill', 'Melancholic', 'Late Night'],
+    coverImage: 'https://i.scdn.co/image/ab67616d0000b2737bcb47bf66f6488ea9009fc5',
+    audioSrc: `${AUDIO_BASE}Black_Raat.mp3`,
+    releaseDate: '2022-08-22',
+    duration: 186,
+  },
   // {
   //   id: 'song-038`',
   //   name: 'Fake Love',
