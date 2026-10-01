@@ -26,6 +26,13 @@ export const artistPhotos = {
   'Sanjoy': 'https://i.scdn.co/image/ab6761610000e5ebd2d10c1a5b5d6424b7178909',
   'Babbu Maan': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ7kGnnbaWYEpqSLMqga8jlEcwbQCJXOkNDRa-JiKa61TY8gRFSdnTpUk&s=10',
   'Ikka': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReVyt99vMIp-l9uRRlhFmdaIrnTLIiupz4-qGmMFmdog&s=10',
+  'Shubh': 'https://i.scdn.co/image/ab6761610000e5eb9dfbd284ba8a7d4876a181e3',
+  'Parmish Verma': 'https://i.scdn.co/image/ab6761610000e5eb2533ca941bf0764c263d7407',
+  'Jassie Gill': 'https://i.scdn.co/image/ab6761610000e5eb71af3d58b075e1e893e58e74',
+  'Sharry Mann': 'https://i.scdn.co/image/ab6761610000e5eb41c796593174a4d31c5e6048',
+  'Ndee Kundu': 'https://i.scdn.co/image/ab6761610000e5eb3ead1b6ab30df93037a687a3',
+  'Mika Singh': 'https://c.saavncdn.com/artists/Mika_Singh_003_20250321072715_500x500.jpg',
+  'Shashwat Sachdev': 'https://i.scdn.co/image/ab6761610000e5eb54f120e72388f1c5c3aa3edd',
   // 'Artist': 'Link',
 };
 
