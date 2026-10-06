@@ -33,6 +33,8 @@ export const artistPhotos = {
   'Ndee Kundu': 'https://i.scdn.co/image/ab6761610000e5eb3ead1b6ab30df93037a687a3',
   'Mika Singh': 'https://c.saavncdn.com/artists/Mika_Singh_003_20250321072715_500x500.jpg',
   'Shashwat Sachdev': 'https://i.scdn.co/image/ab6761610000e5eb54f120e72388f1c5c3aa3edd',
+  'King': 'https://www.hindustantimes.com/ht-img/img/2026/06/21/cropped/1-1/King_1782024386361_1782024404279_e7a81bfb-3d33-4bd2-bb8d-36f9c6331183.jpg',
+  'Shaan': 'https://i.scdn.co/image/ab6761610000e5eb2573d940f1062a6646891e50',
   // 'Artist': 'Link',
 };
 
