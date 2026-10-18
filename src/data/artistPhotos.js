@@ -35,6 +35,11 @@ export const artistPhotos = {
   'Shashwat Sachdev': 'https://i.scdn.co/image/ab6761610000e5eb54f120e72388f1c5c3aa3edd',
   'King': 'https://www.hindustantimes.com/ht-img/img/2026/06/21/cropped/1-1/King_1782024386361_1782024404279_e7a81bfb-3d33-4bd2-bb8d-36f9c6331183.jpg',
   'Shaan': 'https://i.scdn.co/image/ab6761610000e5eb2573d940f1062a6646891e50',
+  'Juss': 'https://i.scdn.co/image/ab6761610000e5ebe8154e7433e3c5528a3fafda',
+  'MixSingh': 'https://i.scdn.co/image/ab67616100005174a9a7f16c16d4c0565d2317cf',
+  'Jass Manak': 'https://i.scdn.co/image/ab6761610000e5eb8a2ba4f686fbfeae881cb0de',
+  'Emiway Bantai': 'https://i.scdn.co/image/ab6761610000e5eb671b85101884b7f90ca19b00',
+  'Guri': 'https://i.scdn.co/image/ab6761610000e5ebb64819713332f3ac71b2f54a',
   // 'Artist': 'Link',
 };
 
