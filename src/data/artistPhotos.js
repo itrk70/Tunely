@@ -40,6 +40,12 @@ export const artistPhotos = {
   'Jass Manak': 'https://i.scdn.co/image/ab6761610000e5eb8a2ba4f686fbfeae881cb0de',
   'Emiway Bantai': 'https://i.scdn.co/image/ab6761610000e5eb671b85101884b7f90ca19b00',
   'Guri': 'https://i.scdn.co/image/ab6761610000e5ebb64819713332f3ac71b2f54a',
+  'Nusrat Fateh Ali Khan': 'https://i.scdn.co/image/ab6761610000e5eb46444c5c2069fe5470bec996',
+  'Irshad Kamil': 'https://i.scdn.co/image/ab6761610000e5eb47b943824370b9eb2fb9607f',
+  'Armaan Khan': 'https://i.scdn.co/image/ab6761610000e5ebd14f7fe0a0f6c3e30f5620b6',
+  'Arijit Singh': 'https://i.scdn.co/image/ab6761610000e5ebadfb0b2df04b77e43b5f7375',
+  'Reble': 'https://i.scdn.co/image/ab6761610000e5ebf43b173d37b8cc00df37e804',
+  'Udit Narayan': 'https://i.scdn.co/image/ab6761610000e5eb8de0e6e7e55d7773931ab7f4',
   // 'Artist': 'Link',
 };
 
