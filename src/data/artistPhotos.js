@@ -46,6 +46,9 @@ export const artistPhotos = {
   'Arijit Singh': 'https://i.scdn.co/image/ab6761610000e5ebadfb0b2df04b77e43b5f7375',
   'Reble': 'https://i.scdn.co/image/ab6761610000e5ebf43b173d37b8cc00df37e804',
   'Udit Narayan': 'https://i.scdn.co/image/ab6761610000e5eb8de0e6e7e55d7773931ab7f4',
+  'Jasmine Sandlas': 'https://i.scdn.co/image/ab6761610000e5ebbe92f9dbbfb53388aea9308c',
+  'Atif Aslam': 'https://i.scdn.co/image/ab6761610000e5ebc40600e02356cc86f0debe84',
+  'Joi Barua': 'https://i.scdn.co/image/ab6761610000e5eb2325cc3b1e73bb297e041aa1',
   // 'Artist': 'Link',
 };
 
